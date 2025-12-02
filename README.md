@@ -1,12 +1,42 @@
-⚡ My Fullstack Blog (个人全栈博客系统)一个基于 Vue 3 + Node.js + MySQL 开发的个人博客系统。实现前后端分离，具备文章展示、留言板互动等功能。(建议：项目运行起来后，截一张好看的图，替换上面这个链接)🛠 技术栈 (Tech Stack)前端 (Frontend)Vue 3: 使用 Composition API 构建逻辑。Vite: 极速的开发构建工具。Vue Router: 单页应用路由管理。Tailwind CSS: 高效的原子化 CSS 样式库。Axios: 处理 HTTP 请求。后端 (Backend)Node.js: JavaScript 运行时环境。Express: 简洁灵活的 Web 应用框架。MySQL: 关系型数据库存储文章与留言。mysql2: 高效的数据库驱动。🚀 功能特性📱 响应式设计：完美适配桌面端与移动端。🧭 SPA 单页应用：丝滑的页面切换体验，无刷新加载。📝 动态数据交互：文章与留言数据实时从数据库获取。🎨 现代化 UI：使用深色模式 (Dark Mode) 与毛玻璃特效。💻 本地运行指南 (How to run)1. 克隆项目git clone [https://github.com/你的用户名/my-fullstack-blog.git](https://github.com/你的用户名/my-fullstack-blog.git)
+⚡ My Fullstack Blog (个人全栈博客系统)一个基于 Vue 3 + Node.js + MySQL 从零开发的个人博客系统。(建议：项目做完后，截图你自己的网页替换上面这个链接)🛠 技术栈 (Tech Stack)前端 (Frontend)Framework: Vue 3 (Composition API)Build Tool: ViteRouting: Vue Router 4Styling: Tailwind CSSHTTP Client: Axios后端 (Backend)Runtime: Node.jsFramework: Express.jsDatabase: MySQL 5.7/8.0Driver: mysql2🚀 功能特性 (Features)📱 响应式设计：完美适配 PC 和移动端，采用深色模式 (Dark Theme)。🧭 SPA 单页应用：无刷新跳转，极速体验。📝 文章展示：从数据库动态读取文章列表。💬 留言板互动：访客可以提交留言，数据实时写入数据库。🛡️ RESTful API：标准的前后端分离架构。💻 本地运行指南 (How to Run)如果你想在本地运行这个项目，请按照以下步骤操作：1. 克隆项目git clone [https://github.com/Liqingqing001/my-fullstack-blog.git](https://github.com/Liqingqing001/my-fullstack-blog.git)
 cd my-fullstack-blog
-2. 数据库设置确保本地安装了 MySQL，并执行以下 SQL 语句：CREATE DATABASE my_blog_db;
--- (这里可以把你之前的建表语句 create table articles... 贴一部分在这里，方便别人运行)
-3. 启动后端cd server
+2. 数据库设置 (Database Setup)确保本地安装了 MySQL，创建一个名为 my_blog_db 的数据库，并执行以下 SQL：CREATE DATABASE my_blog_db;
+USE my_blog_db;
+
+-- 文章表
+CREATE TABLE articles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    summary TEXT,
+    content LONGTEXT,
+    category VARCHAR(50),
+    cover_image VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 留言表
+CREATE TABLE comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nickname VARCHAR(100) NOT NULL,
+    email VARCHAR(100),
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 插入测试数据
+INSERT INTO articles (title, summary, content, category) 
+VALUES ('我的第一篇博客', 'Vue3真好用', '这是内容...', '技术');
+3. 启动后端 (Backend)cd server
 npm install
-# 注意：请在 server/index.js 中修改你的数据库密码
+# 【重要】请在 server/index.js 中修改你的数据库密码
 npm start
-4. 启动前端新建终端窗口：cd client
+# 服务器将运行在 http://localhost:3000
+4. 启动前端 (Frontend)新建一个终端窗口：cd client
 npm install
 npm run dev
-访问浏览器 http://localhost:5173 即可查看效果。Author: [你的名字/GitHubID]
+# 访问 http://localhost:5173
+📂 目录结构 (Structure)my-fullstack-blog/
+├── client/     # Vue 3 前端代码
+├── server/     # Node.js 后端代码
+└── README.md   # 项目说明书
+Author: Liqingqing001
