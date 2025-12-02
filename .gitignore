@@ -1,0 +1,39 @@
+==================================
+
+全局忽略 (同时对 client 和 server 生效)
+
+==================================
+
+1. 忽略所有 node_modules (不管是前端的还是后端的)
+
+node_modules/
+*/node_modules/
+
+2. 忽略系统生成的文件 (Mac/Windows)
+
+.DS_Store
+Thumbs.db
+
+3. 忽略环境变量 (保护数据库密码)
+
+.env
+.env
+.env.
+
+4. 忽略日志文件
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+5. 忽略编辑器配置 (可选)
+
+.vscode/
+.idea/
+
+6. 忽略打包后的文件
+
+dist/
+build/
