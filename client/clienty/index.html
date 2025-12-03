@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>我的全栈博客</title>
-    
-    <!-- ============================================== -->
-    <!-- 关键修复：直接引入 Tailwind CSS 样式库 -->
-    <!-- 这样你的 bg-slate-900 等样式才会生效 -->
-    <!-- ============================================== -->
-    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- 设置一些基础样式，防止与 Vue 默认样式冲突 -->
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: #0f172a; /* 对应 slate-900 */
-      }
-    </style>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的全栈博客</title>
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b623508d4d153addb9b41e55f54c6bcc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+  <!-- ============================================== -->
+  <!-- 关键修复：直接引入 Tailwind CSS 样式库 -->
+  <!-- 这样你的 bg-slate-900 等样式才会生效 -->
+  <!-- ============================================== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 设置一些基础样式，防止与 Vue 默认样式冲突 -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0f172a;
+      /* 对应 slate-900 */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
